@@ -65,10 +65,10 @@ eval("var constants = __webpack_require__(/*! constants */ \"constants\")\n\nvar
 /*!*********************!*\
   !*** ./src/main.ts ***!
   \*********************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nvar electron_1 = __webpack_require__(/*! electron */ \"electron\");\r\nvar electron_is_dev_1 = __importDefault(__webpack_require__(/*! electron-is-dev */ \"./node_modules/electron-is-dev/index.js\"));\r\nvar graceful_fs_1 = __importDefault(__webpack_require__(/*! graceful-fs */ \"./node_modules/graceful-fs/graceful-fs.js\"));\r\nvar createWindow = function () {\r\n    var win = new electron_1.BrowserWindow({\r\n        width: 800,\r\n        height: 600,\r\n        webPreferences: {\r\n            nodeIntegration: true,\r\n            contextIsolation: false\r\n        }\r\n    });\r\n    console.log(electron_is_dev_1.default);\r\n    win.loadURL(electron_is_dev_1.default\r\n        ? 'http://localhost:3000'\r\n        : \"file://\" + electron_1.app.getAppPath() + \"/index.html\");\r\n};\r\nelectron_1.app.on('ready', function () {\r\n    createWindow();\r\n    electron_1.ipcMain.on('save', function (_event, arg) {\r\n        graceful_fs_1.default.writeFile('C:\\\\Users\\\\Dan\\\\Documents\\\\Home.txt', arg.home, function (error) { if (error)\r\n            console.log(error); });\r\n        graceful_fs_1.default.writeFile('C:\\\\Users\\\\Dan\\\\Documents\\\\HomeScore.txt', arg.homeScore.toString(), function (error) { if (error)\r\n            console.log(error); });\r\n        graceful_fs_1.default.writeFile('C:\\\\Users\\\\Dan\\\\Documents\\\\Away.txt', arg.away, function (error) { if (error)\r\n            console.log(error); });\r\n        graceful_fs_1.default.writeFile('C:\\\\Users\\\\Dan\\\\Documents\\\\AwayScore.txt', arg.awayScore.toString(), function (error) { if (error)\r\n            console.log(error); });\r\n    });\r\n});\r\n\n\n//# sourceURL=webpack://stkeeper/./src/main.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! electron */ \"electron\");\n/* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(electron__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var electron_is_dev__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! electron-is-dev */ \"./node_modules/electron-is-dev/index.js\");\n/* harmony import */ var electron_is_dev__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(electron_is_dev__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var graceful_fs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! graceful-fs */ \"./node_modules/graceful-fs/graceful-fs.js\");\n/* harmony import */ var graceful_fs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(graceful_fs__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\r\nvar createWindow = function () {\r\n    var win = new electron__WEBPACK_IMPORTED_MODULE_0__.BrowserWindow({\r\n        width: 800,\r\n        height: 600,\r\n        webPreferences: {\r\n            nodeIntegration: true,\r\n            contextIsolation: false\r\n        }\r\n    });\r\n    console.log((electron_is_dev__WEBPACK_IMPORTED_MODULE_1___default()));\r\n    win.loadURL((electron_is_dev__WEBPACK_IMPORTED_MODULE_1___default())\r\n        ? 'http://localhost:3000'\r\n        : \"file://\" + electron__WEBPACK_IMPORTED_MODULE_0__.app.getAppPath() + \"/index.html\");\r\n};\r\nelectron__WEBPACK_IMPORTED_MODULE_0__.app.on('ready', function () {\r\n    createWindow();\r\n    electron__WEBPACK_IMPORTED_MODULE_0__.ipcMain.on('save', function (_event, arg) {\r\n        graceful_fs__WEBPACK_IMPORTED_MODULE_2___default().writeFile('C:\\\\Users\\\\Dan\\\\Documents\\\\Home.txt', arg.home, function (error) { if (error)\r\n            console.log(error); });\r\n        graceful_fs__WEBPACK_IMPORTED_MODULE_2___default().writeFile('C:\\\\Users\\\\Dan\\\\Documents\\\\HomeScore.txt', arg.homeScore.toString(), function (error) { if (error)\r\n            console.log(error); });\r\n        graceful_fs__WEBPACK_IMPORTED_MODULE_2___default().writeFile('C:\\\\Users\\\\Dan\\\\Documents\\\\Away.txt', arg.away, function (error) { if (error)\r\n            console.log(error); });\r\n        graceful_fs__WEBPACK_IMPORTED_MODULE_2___default().writeFile('C:\\\\Users\\\\Dan\\\\Documents\\\\AwayScore.txt', arg.awayScore.toString(), function (error) { if (error)\r\n            console.log(error); });\r\n    });\r\n});\r\n\n\n//# sourceURL=webpack://stkeeper/./src/main.ts?");
 
 /***/ }),
 
@@ -158,17 +158,58 @@ module.exports = require("util");
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/main.ts");
 /******/ 	
 /******/ })()
